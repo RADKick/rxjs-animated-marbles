@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS Playground</title>
+  </head>
+
+  <body kick-app>
+    <br />
+    <div *lane="lanes" class="lane">
+      <div>
+        <button class="btn" ^="addBall(lane)">+ Ball</button> Lane #{{$index}}
+      </div>
+      <div *ball="lane.balls" ^="remBall(lane, ball, $index)"
+      >
+      <div class="marble" :id="ball" ..border-color="lane.bg">
+      <p>{{ball}}</p></div>
+      </div>
+    </div>
+
+    <div class="result>">
+      <button class="btn" ^="addLane('#')">+ # Lane</button>
+      <button class="btn" ^="addLane('A')">+ A Lane</button>
+      <button class="btn" ^="addLane('a')">+ a Lane</button>
+      Here is the Rxjs result:<br />
+    </div>
+    <div *ball="result.balls">
+      <div class="marble"><p>{{ball}}</p></div>
+    </div>
+  </body>
+</html>
